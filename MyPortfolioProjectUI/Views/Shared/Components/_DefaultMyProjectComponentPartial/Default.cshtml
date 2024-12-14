@@ -1,4 +1,5 @@
-﻿<section class="ftco-section ftco-project" id="projects-section">
+﻿@model List<ProjectListDto>
+<section class="ftco-section ftco-project" id="projects-section">
     <div class="container">
         <div class="row justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
@@ -8,21 +9,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(/clark-master/images/project-4.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <span style="font-size:x-small">12/01/2024 - 12/02/2024</span>
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <p style="font-size:x-small;color:white">
-                            Web Design Web Design asdasdas dasd asd asd asd asd asdasdasdas asd asd
-                            Web Design Web Design asdasdas dasd asd asd asd asd asdasdasdas asd asd
-                            Web Design Web Design asdasdas dasd asd asd asd asd asdasdasdas asd asd
-                        </p>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(@item.ImageUrl);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <span style="font-size:x-small">@item.Date</span>
+                            <h3><a href="@item.Url">@item.Title</a></h3>
+                            <p style="font-size:x-small;color:white">
+                              @item.Description
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            }
         </div>
     </div>
 </section>

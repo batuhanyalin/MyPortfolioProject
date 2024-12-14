@@ -12,5 +12,6 @@ namespace MyPortfolioProject.DtoLayer.ContactInfoDtos
         public string Title { get; set; }
         public string Icon { get; set; }
         public string Url { get; set; }
+        public string UrlText { get; set; }
     }
 }

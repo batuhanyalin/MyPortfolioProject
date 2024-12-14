@@ -18,5 +18,10 @@ namespace MyPortfolioProject.DataAccessLayer.EntityFramework
         {
             _context = context;
         }
+        public About GetAboutList()
+        {
+            var values=_context.Abouts.FirstOrDefault();
+            return values;
+        }
     }
 }

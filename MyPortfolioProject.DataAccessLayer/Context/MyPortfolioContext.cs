@@ -18,7 +18,6 @@ namespace MyPortfolioProject.DataAccessLayer.Context
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
-        public DbSet<CV> CVs { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<Service> Services { get; set; }

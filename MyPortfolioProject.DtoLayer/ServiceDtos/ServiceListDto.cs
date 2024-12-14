@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPortfolioProject.EntityLayer.Concrete
+namespace MyPortfolioProject.DtoLayer.ServiceDtos
 {
-    public class ContactInfo
+    public class ServiceListDto
     {
-        public int ContactInfoId { get; set; }
+        public int ServiceId { get; set; }
         public string Title { get; set; }
         public string Icon { get; set; }
-        public string Url { get; set; }
-        public string UrlText { get; set; }
+        public string? Url { get; set; }
     }
 }

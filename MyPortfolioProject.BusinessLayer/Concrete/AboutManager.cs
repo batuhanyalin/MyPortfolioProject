@@ -23,6 +23,11 @@ namespace MyPortfolioProject.BusinessLayer.Concrete
             _aboutDAL.Delete(id);
         }
 
+        public About TGetAboutList()
+        {
+            return _aboutDAL.GetAboutList();
+        }
+
         public About TGetById(int id)
         {
             return _aboutDAL.GetById(id);

@@ -1,0 +1,9 @@
+﻿@model List<SocialMediaListDto>
+<div class="col-md-12 text-center">
+    <ul class="ftco-footer-social list-unstyled mt-5">
+        @foreach (var item in Model)
+        {
+            <li class="ftco-animate"><a href="@item.Url"><span class="@item.Icon"></span></a></li>
+        }
+    </ul>
+</div>

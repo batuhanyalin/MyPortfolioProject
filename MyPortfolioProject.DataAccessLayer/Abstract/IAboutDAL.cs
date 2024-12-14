@@ -9,5 +9,6 @@ namespace MyPortfolioProject.DataAccessLayer.Abstract
 {
     public interface IAboutDAL:IGenericDAL<About>
     {
+        public About GetAboutList();
     }
 }

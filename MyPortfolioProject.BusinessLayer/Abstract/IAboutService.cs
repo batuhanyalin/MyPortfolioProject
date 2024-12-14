@@ -9,5 +9,6 @@ namespace MyPortfolioProject.BusinessLayer.Abstract
 {
     public interface IAboutService:IGenericService<About>
     {
+        public About TGetAboutList();
     }
 }

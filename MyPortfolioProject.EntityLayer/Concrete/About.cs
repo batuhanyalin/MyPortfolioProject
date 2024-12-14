@@ -15,6 +15,7 @@ namespace MyPortfolioProject.EntityLayer.Concrete
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public string CvUrl { get; set; }
         public int ProjectCount { get; set; }
     }
 }

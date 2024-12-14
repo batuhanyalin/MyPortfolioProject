@@ -1,13 +1,8 @@
 ﻿<footer class="ftco-footer ftco-section">
     <div class="container">
         <div class="row mb-5">
-            <div class="col-md-12 text-center">
-                <ul class="ftco-footer-social list-unstyled mt-5">
-                    <li class="ftco-animate"><a href="#"><span class="icon-github"></span></a></li>
-                    <li class="ftco-animate"><a href="#"><span class="icon-linkedin"></span></a></li>
-                    <li class="ftco-animate"><a href="https://www.instagram.com/batuhanyalin"><span class="icon-instagram"></span></a></li>
-                </ul>
-            </div>
+            @await Component.InvokeAsync("_DefaultFooterSocialMediaComponentPartial")
+
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
@@ -15,7 +10,7 @@
                 <p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This website was created by <a href="https://wwwlinkedin.com/in/batuhanyalin" target="_blank">Batuhan YALIN</a>
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This website was created by <a href="https://www.linkedin.com/in/batuhanyalin" target="_blank">Batuhan YALIN</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>

@@ -9,15 +9,20 @@ using MyPortfolioProject.DataAccessLayer.Abstract;
 using MyPortfolioProject.DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using MyPortfolioProject.DtoLayer.ContactDtos;
+using MyPortfolioProject.BusinessLayer.ValidationRules;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//** FLUENT VALIDATON **
-//Burada validation .net 6.0 a uygun bir yöntemle dahil ediliyor.
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddFluentValidationClientsideAdapters();
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-//*** FLUENT VALIDATON **
+
+
+//***FLUENT VALIDATON**
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters().AddValidatorsFromAssemblyContaining<Program>();
+//**FLUENT VALIDATON**
+
+builder.Services.AddControllersWithViews();
+
+
 
 builder.Services.AddDbContext<MyPortfolioContext>();
 builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<MyPortfolioContext>();
@@ -35,8 +40,6 @@ builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddScoped<IContactDAL, EFContactDAL>();
 builder.Services.AddScoped<IContactInfoService, ContactInfoManager>();
 builder.Services.AddScoped<IContactInfoDAL, EFContactInfoDAL>();
-builder.Services.AddScoped<ICVService, CVManager>();
-builder.Services.AddScoped<ICVDAL, EFCVDAL>();
 builder.Services.AddScoped<IProjectService, ProjectManager>();
 builder.Services.AddScoped<IProjectDAL, EFProjectDAL>();
 builder.Services.AddScoped<IResumeService, ResumeManager>();
@@ -50,7 +53,7 @@ builder.Services.AddScoped<ISocialMediaDAL, EFSocialMediaDAL>();
 
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+
 
 ////Proje seviyesinde Authorization uyguluyoruz.
 //builder.Services.AddMvc(config =>
