@@ -7,6 +7,8 @@ using MyPortfolioProject.BusinessLayer.Abstract;
 using MyPortfolioProject.BusinessLayer.Concrete;
 using MyPortfolioProject.DataAccessLayer.Abstract;
 using MyPortfolioProject.DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,12 +19,14 @@ builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 //*** FLUENT VALIDATON **
 
+builder.Services.AddDbContext<MyPortfolioContext>();
 builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<MyPortfolioContext>();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Login/Index";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
     options.LogoutPath = "/Login/LogOut";
+    options.AccessDeniedPath = "/Default/error403";
 });
 
 builder.Services.AddScoped<IAboutService, AboutManager>();
@@ -44,8 +48,17 @@ builder.Services.AddScoped<ISkillDAL, EFSkillDAL>();
 builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
 builder.Services.AddScoped<ISocialMediaDAL, EFSocialMediaDAL>();
 
+builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+////Proje seviyesinde Authorization uyguluyoruz.
+//builder.Services.AddMvc(config =>
+//{
+//    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+//    config.Filters.Add(new AuthorizeFilter(policy));
+//});
+
 
 var app = builder.Build();
 

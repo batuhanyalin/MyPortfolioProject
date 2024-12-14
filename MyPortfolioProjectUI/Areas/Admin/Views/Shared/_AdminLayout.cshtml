@@ -4,13 +4,35 @@
 }
 
 <!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_AdminLayout</title>
-</head>
+<html lang="en">
+@await Component.InvokeAsync("_AdminLayoutHeadComponentPartial")
 <body>
-    @RenderBody()
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        @await Component.InvokeAsync("_AdminLayoutNavBarComponentPartial")
+        <!-- ========== Left Sidebar Start ========== -->
+        @await Component.InvokeAsync("_AdminLayoutSideBarComponentPartial")
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                  @RenderBody()
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+            @await Component.InvokeAsync("_AdminLayoutFooterComponentPartial")
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+    <!-- Overlay-->
+    <div class="menu-overlay"></div>
+    @await Component.InvokeAsync("_AdminLayoutScriptComponentPartial")
 </body>
+
 </html>
