@@ -8,8 +8,8 @@ namespace MyPortfolioProject.BusinessLayer.Abstract
 {
     public interface IGenericService<T> where T : class
     {
-        void TUpdate(T entity);
-        void TInsert(T entity);
+        void TUpdate(T t);
+        void TInsert(T t);
         void TDelete(int id);
         T TGetById(int id);
         List<T> TGetListAll();

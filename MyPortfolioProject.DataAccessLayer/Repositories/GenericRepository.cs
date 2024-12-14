@@ -1,4 +1,5 @@
 ﻿using MyPortfolioProject.DataAccessLayer.Abstract;
+using MyPortfolioProject.DataAccessLayer.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,41 @@ namespace MyPortfolioProject.DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDAL<T> where T : class
     {
+        private readonly MyPortfolioContext _context;
+
+        public GenericRepository(MyPortfolioContext context)
+        {
+            _context = context;
+        }
+
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var value = _context.Set<T>().Find(id);
+            _context.Set<T>().Remove(value);
+            _context.SaveChanges();
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Find(id);
+           
         }
 
         public List<T> GetListAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().ToList();
         }
 
         public void Insert(T t)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Add(t);
+            _context.SaveChanges();
         }
 
         public void Update(T t)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(t);
+            _context.SaveChanges();
         }
     }
 }

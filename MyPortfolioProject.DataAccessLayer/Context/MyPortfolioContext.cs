@@ -13,7 +13,7 @@ namespace MyPortfolioProject.DataAccessLayer.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;initial catalog=MyPortfolio;integrated security=true");
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;initial catalog=MyPortfolio;integrated security=true;TrustServerCertificate=True");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }

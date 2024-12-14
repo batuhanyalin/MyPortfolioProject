@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace MyPortfolioProject.DataAccessLayer.EntityFramework
 {
-    public class EFContactDAL:GenericRepository<Contact>,IContactDAL
+    public class EFProjectDAL:GenericRepository<Project>,IProjectDAL
     {
         private readonly MyPortfolioContext _context;
 
-        public EFContactDAL(MyPortfolioContext context) : base(context)
+        public EFProjectDAL(MyPortfolioContext context) : base(context)
         {
             _context = context;
         }
