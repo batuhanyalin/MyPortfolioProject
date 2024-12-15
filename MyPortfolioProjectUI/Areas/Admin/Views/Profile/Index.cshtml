@@ -1,0 +1,71 @@
+﻿@model ProfileUpdateModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin/Profile/Index">ProfileList</a></li>
+                    <li class="breadcrumb-item active">UpdateProfile</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Profile</h4>
+                <p class="card-subtitle mb-4">It is important that you fill out the information completely. </p>
+                <form method="post">
+                    <div class="row">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="col col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" required class="form-control" asp-for="Name">
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Surname</label>
+                                <input type="text" required class="form-control" asp-for="Surname">
+                                <span class="text-danger" asp-validation-for="Surname"></span>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" readonly class="form-control" asp-for="Username">
+                                <span class="text-danger" asp-validation-for="Username"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" class="form-control" asp-for="Password">
+                                <span class="text-danger" asp-validation-for="Password"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-12">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" required class="form-control" asp-for="Email">
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning waves-effect waves-light"><i class="mdi mdi-update"></i> Update</button>
+                </form>
+            </div> <!-- end Authord-body-->
+        </div> <!-- end Authord-->
+    </div> <!-- end col -->
+</div>
+<!-- end row-->

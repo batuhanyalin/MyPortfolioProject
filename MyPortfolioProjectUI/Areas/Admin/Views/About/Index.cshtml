@@ -1,7 +1,87 @@
-﻿
+﻿@model AboutUpdateDto
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin/Default/Index">Home</a></li>
+                    <li class="breadcrumb-item active">UpdateAbout</li>
+                </ol>
+            </div>
 
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row">
+    <div class="col-xl-8">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Update About</h4>
+                <p class="card-subtitle mb-4">It is important that you fill out the information completely. </p>
+
+                <form method="post">
+                    <div class="row">
+                        <input type="hidden" asp-for="AboutId" />
+                        <div class="col col-md-4">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" asp-for="Name">
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" class="form-control" asp-for="Email">
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" asp-for="Phone">
+                                <span class="text-danger" asp-validation-for="Phone"></span>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">                       
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" class="form-control" asp-for="Address">
+                                <span class="text-danger" asp-validation-for="Address"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Cv Url</label>
+                                <input type="text" class="form-control" asp-for="CvUrl">
+                                <span class="text-danger" asp-validation-for="CvUrl"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Project Count</label>
+                                <input type="number" class="form-control" asp-for="ProjectCount">
+                                <span class="text-danger" asp-validation-for="ProjectCount"></span>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" asp-for="Title">
+                                <span class="text-danger" asp-validation-for="Title"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea rows="5" class="form-control" asp-for="Description"></textarea>
+                                <span class="text-danger" asp-validation-for="Description"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning waves-effect waves-light"><i class="mdi mdi-update"></i> Update</button>
+                </form>
+            </div> <!-- end Authord-body-->
+        </div> <!-- end Authord-->
+    </div> <!-- end col -->
+</div>
+<!-- end row-->

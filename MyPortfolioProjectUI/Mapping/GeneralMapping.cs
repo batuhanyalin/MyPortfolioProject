@@ -2,7 +2,9 @@
 using MyPortfolioProject.DtoLayer.AboutDtos;
 using MyPortfolioProject.DtoLayer.ContactDtos;
 using MyPortfolioProject.DtoLayer.ContactInfoDtos;
+using MyPortfolioProject.DtoLayer.IdentityDtos;
 using MyPortfolioProject.DtoLayer.ProjectDtos;
+using MyPortfolioProject.DtoLayer.RegisterDtos;
 using MyPortfolioProject.DtoLayer.ResumeDtos;
 using MyPortfolioProject.DtoLayer.ServiceDtos;
 using MyPortfolioProject.DtoLayer.SkillDtos;
@@ -22,8 +24,10 @@ namespace MyPortfolioProjectUI.Mapping
             CreateMap<Contact,ContactCreateDto>().ReverseMap();
             CreateMap<ContactInfo,ContactInfoListDto>().ReverseMap();
             CreateMap<ContactInfo,ContactInfoUpdateDto>().ReverseMap();
+            CreateMap<ContactInfo,ContactInfoCreateDto>().ReverseMap();
             CreateMap<Project,ProjectUpdateDto>().ReverseMap();
             CreateMap<Project,ProjectListDto>().ReverseMap();
+            CreateMap<Project,ProjectCreateDto>().ReverseMap();
             CreateMap<Resume,ResumeListDto>().ReverseMap();
             CreateMap<Resume,ResumeUpdateDto>().ReverseMap();
             CreateMap<Service,ServiceListDto>().ReverseMap();
@@ -35,6 +39,9 @@ namespace MyPortfolioProjectUI.Mapping
             CreateMap<SocialMedia,SocialMediaListDto>().ReverseMap();
             CreateMap<SocialMedia,SocialMediaCreateDto>().ReverseMap();
             CreateMap<SocialMedia,SocialMediaUpdateDto>().ReverseMap();
+            CreateMap<AppUser, RegisterDto>().ReverseMap();
+            CreateMap<AppUser, LoginDtos>().ReverseMap();
+            CreateMap<AppUser, ProfileUpdateDto>().ReverseMap();
         }
     }
 }

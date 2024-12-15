@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using MyPortfolioProject.DtoLayer.ContactDtos;
 using MyPortfolioProject.BusinessLayer.ValidationRules;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +26,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddDbContext<MyPortfolioContext>();
-builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<MyPortfolioContext>();
+
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Login/Index";
@@ -33,6 +34,9 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LogoutPath = "/Login/LogOut";
     options.AccessDeniedPath = "/Default/error403";
 });
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<MyPortfolioContext>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<MyPortfolioContext>(); //Þifremi unuttum mu kýsmý için Token iþlemi
+
 
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDAL, EFAboutDAL>();
@@ -68,7 +72,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Default/error404");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -83,7 +87,7 @@ app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.Run();
 

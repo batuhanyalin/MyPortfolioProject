@@ -1,0 +1,98 @@
+﻿@model List<SkillListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin/Default/Index">Home</a></li>
+                    <li class="breadcrumb-item active">SkillList</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="col-xl-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h4 class="Skilld-title">Skill List</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <a href="/Admin/Skill/CreateSkill" class="btn btn-primary btn-rounded waves-effect waves-light">
+                        <i class="mdi mdi-gamepad-round"></i>  New Skill
+                    </a>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col">
+                    <p class="Skilld-subtitle mb-4">
+                        You can perform operations such as adding, deleting, updating and listing on this page.
+                    </p>
+                </div>
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Rate</th>
+                            <th>Aksiyon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model.Count == 0)
+                            {
+                                <div class="alert alert-secondary" role="alert">
+                                    No data found.
+                                </div>
+                            }
+                            else
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@item.Title</td>                                      
+                                        <td>@item.Rate</td>
+                                        <td>
+
+                                            <a href="/Admin/Skill/UpdateSkill/@item.SkillId" class="btn btn-warning btn-rounded waves-effect waves-light">
+                                                <i class="mdi mdi-update"></i>  Update
+                                            </a>
+
+                                            <a href="/Admin/Skill/DeleteSkill/@item.SkillId" class="btn btn-danger btn-rounded waves-effect waves-light">
+                                                <i class="mdi mdi-delete-forever"></i>  Delete
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end Skilld-body-->
+    </div>
+    <!-- end Skilld -->
+</div>

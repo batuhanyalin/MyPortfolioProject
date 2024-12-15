@@ -1,0 +1,64 @@
+﻿@model LoginDtos
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Batuhan YALIN | .Net Developer - Login</title>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
+    <link rel="stylesheet" href="~/login/dist/style.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form method="post" class="login">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" required asp-for="Username" placeholder="Username">
+                        <span class="text-danger" asp-validation-for="Username"></span>
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" required asp-for="Password" placeholder="Password">
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="login__field">
+                        <a class="button__text" style="font-size:x-small;color:darkgray" href="/PasswordChange/ForgetPassword">
+                            Forgot Your Password?
+                        </a>
+                    </div>
+
+                    <button class="button login__submit">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>
+                  
+                </form>
+                <div class="social-login">
+                    <h3>Contact Me</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/batuhanyalin" class="social-login__icon fab fa-instagram"></a>
+                        <a href="https://linkedin.com/in/batuhanyalin" class="social-login__icon fab fa-linkedin"></a>
+                        <a href="https://github.com/batuhanyalin" class="social-login__icon fab fa-github"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+
+</body>
+</html>

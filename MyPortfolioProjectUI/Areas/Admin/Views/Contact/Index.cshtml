@@ -1,0 +1,111 @@
+﻿@model List<ContactListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin/Default/Index">Home</a></li>
+                    <li class="breadcrumb-item active">ContactMessageList</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="col-xl-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h4 class="Contactd-title">Contact Message List</h4>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col">
+                    <p class="Contactd-subtitle mb-4">
+                        You can perform operations such as adding, deleting, updating and listing on this page.
+                    </p>
+                </div>
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Text</th>
+                            <th>Date</th>
+                            <th>Aksiyon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model.Count == 0)
+                            {
+                                <div class="alert alert-secondary" role="alert">
+                                    No data found.
+                                </div>
+                            }
+                            else
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.Subject</td>
+                                        <td>
+                                            @{
+                                                if (item.Text?.Length > 50)
+                                                {
+                                                    @item.Text.Substring(0, 50)
+                                                    ;
+                                                }
+                                                else
+                                                {
+                                                    @item.Text?.ToString()
+                                                    ;
+                                                }
+                                            }
+                                            </td>
+                                            <td>@item.Date.ToString("dd/MM/yyy HH:ss")</td>
+                                        <td>
+
+                                            <a href="/Admin/Contact/ReadContact/@item.ContactId" class="btn btn-warning btn-rounded waves-effect waves-light">
+                                                <i class="fas fa-book-open"></i>  Read
+                                            </a>
+
+                                            <a href="/Admin/Contact/DeleteContact/@item.ContactId" class="btn btn-danger btn-rounded waves-effect waves-light">
+                                                <i class="mdi mdi-delete-forever"></i>  Delete
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end Contactd-body-->
+    </div>
+    <!-- end Contactd -->
+</div>

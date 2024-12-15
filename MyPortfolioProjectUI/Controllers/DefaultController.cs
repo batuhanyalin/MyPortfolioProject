@@ -31,7 +31,7 @@ namespace MyPortfolioProjectUI.Controllers
             }
             else
             {
-                return RedirectToAction("Index",dto);
+                return RedirectToAction("Index");
             }
         }
     }
