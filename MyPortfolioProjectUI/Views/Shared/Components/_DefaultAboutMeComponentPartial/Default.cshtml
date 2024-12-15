@@ -5,7 +5,7 @@
             <div class="col-md-6 col-lg-5 d-flex">
                 <div class="img-about img d-flex align-items-stretch">
                     <div class="overlay"></div>
-                    <div class="img d-flex align-self-stretch align-items-center" style="background-image:url(~/clark-master/images/bg_1.png);">
+                    <div class="img d-flex align-self-stretch align-items-center" style="background-image:url(/clark-master/images/bg_2.png);">
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                             <span class="number" data-number="@Model.ProjectCount">0</span>
                             <span>Project complete</span>
                         </p>
-                        <p><a href="@Model.CvUrl" class="btn btn-primary py-3 px-3">Download CV</a></p>
+                        <p><a href="@TempData["CvUrl"]" class="btn btn-primary py-3 px-3">Download CV</a></p>
                     </div>
                 </div>
             </div>
