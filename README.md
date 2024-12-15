@@ -23,57 +23,42 @@ Proje yazılım ve iş hayatı yolculuğumda yaptığım projelerimi, iş hayat�
 ### Giriş
 ![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/login.png?raw=true)
 ### 404 NotFound
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/forbidden.png?raw=true)
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/404notFound.png?raw=true)
+### 404 Parola Sıfırlama
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/forgetPassword.png?raw=true)
+
 
 ### Yönetim Paneli
-#### Dashboard
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_dashboard.png?raw=true)
-#### İstatistikler
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_statistic.png?raw=true)
-#### Araçlar
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_carList.png?raw=true)
-#### Bloglar
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_blogList.png?raw=true)
-#### Araç Özellikleri
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_featureList.png?raw=true)
-#### Araç Özellik Eşleme
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_featureSelect.png?raw=true)
-#### Etiketler
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_tagList.png?raw=true)
-#### Lokasyonlar
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_locationList.png?raw=true)
-#### Blog Yorumları
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_commentListBlog.png?raw=true)
-#### Rezervasyonlar
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_reservation.png?raw=true)
-###### Rezervasyon Güncelle
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_updateReservation.png?raw=true)
-#### İletişim Mesajları
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_contact.png?raw=true)
+#### Anasayfa
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_default.png?raw=true)
+#### Projeler
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_project.png?raw=true)
+#### Özgeçmiş
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_resume.png?raw=true)
+#### Beceriler
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_skill.png?raw=true)
+#### Kullanılan Teknolojiler
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_service.png?raw=true)
+#### Sosyal Medya
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_socialMedia.png?raw=true)
+#### Hakkımda
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_about.png?raw=true)
+#### Mesajlar
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_contactMessage.png?raw=true)
+#### İletişim Bilgileri
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/admin_contactInfo.png?raw=true)
 
-#### Ana Ekran
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_banner.png?raw=true)
-######
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_about-offerCar.png?raw=true)
-######
+### Ana Ekran
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_home.png?raw=true)
+####
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_about.png?raw=true)
+####
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_resume.png?raw=true)
+####
 ![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_service.png?raw=true)
-######
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_testimonial.png?raw=true)
-######
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_footer.png?raw=true)
-#### Bloglar
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_blogList.png?raw=true)
-##### Blog Detayları
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_blogDetail.png?raw=true)
-##### Blog Yorumları
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_comment.png?raw=true)
-#### Araçlar
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_cars.png?raw=true)
-##### Araç Fiyatları
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_carPrice.png?raw=true)
-##### Araç Kiralama
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_rentacar.png?raw=true)
-##### Araç Filtreleme
-![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_carFilter.png?raw=true)
-#### İletişim Sayfası
+####
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_skill.png?raw=true)
+####
+![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_project.png?raw=true)
+####
 ![](https://github.com/batuhanyalin/MyPortfolioProject/blob/master/MyPortfolioProjectUI/wwwroot/images/projectScreenshots/ui_contact.png?raw=true)
