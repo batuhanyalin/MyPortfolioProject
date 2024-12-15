@@ -27,14 +27,6 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<MyPortfolioContext>();
 
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.LoginPath = "/Login/Index";
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-    options.LogoutPath = "/Login/LogOut";
-    options.AccessDeniedPath = "/Default/error403";
-});
-
 builder.Services.AddIdentity<AppUser, AppRole>().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<MyPortfolioContext>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<MyPortfolioContext>(); //Þifremi unuttum mu kýsmý için Token iþlemi
 
 
@@ -59,24 +51,29 @@ builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 // Add services to the container.
 
 
-////Proje seviyesinde Authorization uyguluyoruz.
-//builder.Services.AddMvc(config =>
-//{
-//    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-//    config.Filters.Add(new AuthorizeFilter(policy));
-//});
-
+//Proje seviyesinde Authorization uyguluyoruz.
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    options.AccessDeniedPath = "/Default/error403";
+    options.LoginPath = new PathString("/Login/Index");
+    options.LogoutPath = new PathString("/Login/LogOut");
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Default/error404");
+    app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-app.UseStatusCodePagesWithReExecute("/Default/error404", "?code={0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -84,6 +81,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 app.UseAuthentication();
+
+app.UseStatusCodePagesWithReExecute("/Default/error{0}");
+
+
 
 app.MapControllerRoute(
     name: "default",

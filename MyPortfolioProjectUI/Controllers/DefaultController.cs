@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyPortfolioProject.BusinessLayer.Abstract;
 using MyPortfolioProject.DtoLayer.ContactDtos;
@@ -6,6 +7,7 @@ using MyPortfolioProject.EntityLayer.Concrete;
 
 namespace MyPortfolioProjectUI.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IContactService _contactService;
@@ -33,6 +35,18 @@ namespace MyPortfolioProjectUI.Controllers
             {
                 return RedirectToAction("Index");
             }
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult error404()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult error403()
+        {
+            return View();
         }
     }
 }
